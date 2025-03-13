@@ -6,12 +6,22 @@ import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class ListaPredicate {
-public static void main(String[] args) {
-List<Integer> numeros = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-Predicate<Integer> esPar = n -> n % 2 == 0;
-List<Integer> numerosPares = numeros.stream()
-.filter(esPar)
-.collect(Collectors.toList());
-System.out.println("Números pares: " + numerosPares);
-}
-}
+        public static void main(String[] args) {
+            // Lista de personas con nombres y edades
+            List<persona> personas = Arrays.asList(
+                new persona("Juan", 25),
+                new persona("Ana", 17),
+                new persona("Luis", 30),
+                new persona("Marta", 16),
+                new persona("Carlos", 22)
+            );
+    
+            Predicate<persona> esMayorDe18 = persona -> persona.getEdad() > 18;
+    
+            List<persona> personasMayoresDe18 = personas.stream()
+                    .filter(esMayorDe18)
+                    .collect(Collectors.toList());
+    
+            System.out.println("personas mayores de 18 años: " + personasMayoresDe18);
+        }
+    }
