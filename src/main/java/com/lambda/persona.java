@@ -17,4 +17,8 @@ public class persona {
     public String toString() {
     return nombre + " - " + edad;
     }
+    public Object setNombre() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setNombre'");
+    }
     }
